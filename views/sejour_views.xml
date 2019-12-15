@@ -1,0 +1,48 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="sejour_list_view">
+      <field name="name">Sejours</field>
+      <field name="model">hotel.sejour</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="numero_chambre"/>
+          <field name="numero_client"/>
+          <field name="date_debut_sejour"/>
+          <field name="date_fin_sejour"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="sejour_form_view">
+      <field name="name">Sejour form</field>
+      <field name="model">hotel.sejour</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="numero_chambre"/>
+            <field name="numero_client"/>
+            <field name="date_debut_sejour"/>
+            <field name="date_fin_sejour"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="sejour_action_window">
+      <field name="name">Sejour window</field>
+      <field name="res_model">hotel.sejour</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="hotel" id="hotel.menu_root"/>
+
+    <!-- menu categories -->
+    <menuitem name="Sejours" id="hotel_sejour_cat" parent="hotel.menu_root"/>
+
+    <!-- actions -->
+    <menuitem name="List of sejours" id="hotel_sejour_list" parent="hotel_sejour_cat" action="sejour_action_window"/>
+  </data>
+</odoo>

@@ -33,6 +33,7 @@
         'views/ville_views.xml',
         'views/localisation_hotel_views.xml',
         'views/metier_client_views.xml',
+        'views/sejour_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
