@@ -6,3 +6,4 @@ access_hotel_chambre,hotel_chambre,model_hotel_chambre,base.group_user,1,1,1,1
 access_hotel_vue_chambre,hotel_vue_chambre,model_hotel_vue_chambre,base.group_user,1,1,1,1
 access_hotel_ville,hotel_ville,model_hotel_ville,base.group_user,1,1,1,1
 access_hotel_localisation_hotel,hotel_localisation_hotel,model_hotel_localisation_hotel,base.group_user,1,1,1,1
+access_hotel_metier,hotel_metier,model_hotel_metier,base.group_user,1,1,1,1
