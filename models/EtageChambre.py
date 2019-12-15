@@ -3,8 +3,8 @@
 from odoo import models, fields
 
 
-class EtageChambre(models.Model):
+class hotel(models.Model):
         _name = 'hotel.etagechambre'
         name = fields.Char('IntituleEtageChambre')
-        code = fields.Char('NombreEtageChambre')
+        code = fields.Number('NombreEtageChambre')
 
