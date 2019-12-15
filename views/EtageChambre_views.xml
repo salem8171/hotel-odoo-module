@@ -2,7 +2,7 @@
     <data>
         <!-- explicit list view definition -->
 
-        <record model="ir.ui.view" id="hotel.list">
+        <record model="ir.ui.view" id="etagechambre_list">
             <field name="name">Etage Chambre list</field>
             <field name="model">hotel.etagechambre</field>
             <field name="arch" type="xml">
@@ -13,7 +13,7 @@
                 </tree>
             </field>
         </record>
-        <record model="ir.ui.view" id="hotel.form">
+        <record model="ir.ui.view" id="etagechambre_form">
             <field name="name">Etage Chambre Form</field>
             <field name="model">hotel.etagechambre</field>
             <field name="arch" type="xml">
