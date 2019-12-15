@@ -1,0 +1,65 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="localisation_hotel_list_view">
+            <field name="name">localisation_hotels</field>
+            <field name="model">hotel.localisation_hotel</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="numero_localisation_hotel"/>
+                    <field name="intitule_localisation_hotel"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="localisation_hotel_form_view">
+            <field name="name">localisation_hotel form</field>
+            <field name="model">hotel.localisation_hotel</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="numero_localisation_hotel"></field>
+                        <field name="intitule_localisation_hotel"></field>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="localisation_hotel_action_window">
+            <field name="name">localisation_hotel window</field>
+            <field name="res_model">hotel.localisation_hotel</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- server action to the one above -->
+        <!--
+    <record model="ir.actions.server" id="hotel.action_server">
+      <field name="name">hotel server</field>
+      <field name="model_id" ref="model_hotel_hotel"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+        <!-- Top menu item -->
+    <menuitem name="hotel" id="hotel.menu_root"/>
+
+        <!-- menu localisation_hotels -->
+    <menuitem name="localisation_hotels" id="hotel_localisation_hotel_cat" parent="hotel.menu_root"/>
+        <!--
+    <menuitem name="Menu 2" id="hotel.menu_2" parent="hotel.menu_root"/>
+    -->
+        <!-- actions -->
+    <menuitem name="List of localisation_hotels" id="hotel_localisation_hotel_list" parent="hotel_localisation_hotel_cat" action="localisation_hotel_action_window"/>
+        <!--
+    <menuitem name="Server to list" id="hotel" parent="hotel.menu_2" action="hotel.action_server"/>
+    -->
+    </data>
+</odoo>

@@ -27,7 +27,11 @@
         'security/ir.model.access.csv',
         'views/categorie_views.xml',
         'views/EtageChambre_views.xml',
-        'views/hotel_views.xml'
+        'views/hotel_views.xml',
+        'views/chambre_views.xml',
+        'views/vue_chambre_views.xml',
+        'views/ville_views.xml',
+        'views/localisation_hotel_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

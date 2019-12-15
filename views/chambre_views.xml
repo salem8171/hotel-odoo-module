@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="chambre_list_view">
+            <field name="name">Chambres</field>
+            <field name="model">hotel.chambre</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="numero_chambre"/>
+                    <field name="intitule_chambre"/>
+                    <field name="surface_chambre"/>
+                    <field name="prix_sejour_une_nuit"/>
+                    <field name="numero_vue_chambre"/>
+                    <field name="numero_etage_chambre"/>
+                    <field name="numero_categorie_chambre"/>
+                    <field name="numero_hotel"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="chambre_form_view">
+            <field name="name">Chambres</field>
+            <field name="model">hotel.chambre</field>
+            <field name="arch" type="xml">
+                <form>
+                  <group>
+                    <field name="numero_chambre"/>
+                    <field name="intitule_chambre"/>
+                    <field name="surface_chambre"/>
+                    <field name="prix_sejour_une_nuit"/>
+                    <field name="numero_vue_chambre"/>
+                    <field name="numero_etage_chambre"/>
+                    <field name="numero_categorie_chambre"/>
+                    <field name="numero_hotel"/>
+                  </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="chambre_action_window">
+            <field name="name">Chambre window</field>
+            <field name="res_model">hotel.chambre</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- Top menu item -->
+        <menuitem name="hotel" id="hotel.menu_root"/>
+
+        <!-- menu categories -->
+        <menuitem name="Chambres" id="hotel_chambre_cat" parent="hotel.menu_root"/>
+
+        <!-- actions -->
+        <menuitem name="Liste des chambres " id="hotel_chambre_list" parent="hotel_chambre_cat"
+                  action="chambre_action_window"/>
+
+    </data>
+</odoo>
