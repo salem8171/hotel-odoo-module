@@ -9,3 +9,4 @@ from . import Ville
 from . import MetierClient
 from . import hotel
 from . import sejour
+from . import Client
