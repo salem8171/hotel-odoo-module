@@ -6,5 +6,5 @@ from odoo import models, fields
 class hotel(models.Model):
         _name = 'hotel.etagechambre'
         name = fields.Char('IntituleEtageChambre')
-        code = fields.Number('NombreEtageChambre')
+        code = fields.Integer('NombreEtageChambre')
 
