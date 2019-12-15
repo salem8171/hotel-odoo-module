@@ -28,6 +28,7 @@
         'views/categorie_views.xml',
         'views/EtageChambre_views.xml',
         'views/chambre_views.xml',
+        'views/vue_chambre_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

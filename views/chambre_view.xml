@@ -10,7 +10,7 @@
                     <field name="intitule_chambre"/>
                     <field name="surface_chambre"/>
                     <field name="prix_sejour_une_nuit"/>
-                    <field name="numero_intitule_vue_chambre"/>
+                    <field name="numero_vue_chambre"/>
                     <field name="numero_etage_chambre"/>
                     <field name="numero_categorie_chambre"/>
                     <field name="numero_hotel"/>
@@ -26,7 +26,7 @@
                     <field name="intitule_chambre"/>
                     <field name="surface_chambre"/>
                     <field name="prix_sejour_une_nuit"/>
-                    <field name="numero_intitule_vue_chambre"/>
+                    <field name="numero_vue_chambre"/>
                     <field name="numero_etage_chambre"/>
                     <field name="numero_categorie_chambre"/>
                     <field name="numero_hotel"/>
