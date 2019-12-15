@@ -2,3 +2,4 @@
 
 from . import categorie
 from . import EtageChambre
+from . import hotel

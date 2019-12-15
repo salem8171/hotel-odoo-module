@@ -1,0 +1,52 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="hotel_list_view">
+      <field name="name">Hotels</field>
+      <field name="model">hotel.hotel</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="numero_hotel"/>
+          <field name="intitule_hotel"/>
+          <field name="nombre_etoile"/>
+          <field name="numero_ville"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="hotel_form_view">
+      <field name="name">Hotel form</field>
+      <field name="model">hotel.hotel</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="numero_hotel"/>
+            <field name="intitule_hotel"/>
+            <field name="nombre_etoile"/>
+            <field name="numero_ville"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="hotel_action_window">
+      <field name="name">Hotel window</field>
+      <field name="res_model">hotel.hotel</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+
+    <menuitem name="hotel" id="hotel.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Hotels" id="hotel_hotel_cat" parent="hotel.menu_root"/>
+
+    <!-- actions -->
+
+    <menuitem name="List of hotels" id="hotel_hotel_list" parent="hotel_hotel_cat" action="hotel_action_window"/>
+  </data>
+</odoo>
