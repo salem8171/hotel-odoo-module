@@ -6,8 +6,8 @@
       <field name="model">hotel.sejour</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="numero_chambre"/>
-          <field name="numero_client"/>
+          <field name="chambre_id"/>
+          <field name="client_id"/>
           <field name="date_debut_sejour"/>
           <field name="date_fin_sejour"/>
         </tree>
@@ -20,8 +20,8 @@
       <field name="arch" type="xml">
         <form>
           <group>
-            <field name="numero_chambre"/>
-            <field name="numero_client"/>
+            <field name="chambre_id"/>
+            <field name="client_id"/>
             <field name="date_debut_sejour"/>
             <field name="date_fin_sejour"/>
           </group>

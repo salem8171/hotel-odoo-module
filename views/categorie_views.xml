@@ -1,65 +1,47 @@
 <odoo>
-    <data>
-        <!-- explicit list view definition -->
-        <record model="ir.ui.view" id="categorie_list_view">
-            <field name="name">Categories</field>
-            <field name="model">hotel.categorie</field>
-            <field name="arch" type="xml">
-                <tree>
-                    <field name="numero_categorie"/>
-                    <field name="intitule_categorie"/>
-                </tree>
-            </field>
-        </record>
-
-        <record model="ir.ui.view" id="categorie_form_view">
-            <field name="name">Categorie form</field>
-            <field name="model">hotel.categorie</field>
-            <field name="arch" type="xml">
-                <form>
-                    <group>
-                        <field name="numero_categorie"></field>
-                        <field name="intitule_categorie"></field>
-                    </group>
-                </form>
-            </field>
-        </record>
-
-        <!-- actions opening views on models -->
-        <record model="ir.actions.act_window" id="categorie_action_window">
-            <field name="name">Categorie window</field>
-            <field name="res_model">hotel.categorie</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-
-        <!-- server action to the one above -->
-        <!--
-    <record model="ir.actions.server" id="hotel.action_server">
-      <field name="name">hotel server</field>
-      <field name="model_id" ref="model_hotel_hotel"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": self._name,
-        }
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="categorie_list_view">
+      <field name="name">Categories</field>
+      <field name="model">hotel.categorie</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="intitule_categorie"/>
+        </tree>
       </field>
     </record>
-    -->
 
-        <!-- Top menu item -->
+    <record model="ir.ui.view" id="categorie_form_view">
+      <field name="name">Categorie form</field>
+      <field name="model">hotel.categorie</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="intitule_categorie"></field>
+          </group>
+          <notebook>
+            <page string="Liste de chambres">
+              <field name="chambre_ids"/>
+            </page>
+          </notebook>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="categorie_action_window">
+      <field name="name">Categorie window</field>
+      <field name="res_model">hotel.categorie</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
     <menuitem name="hotel" id="hotel.menu_root"/>
 
-        <!-- menu categories -->
+      <!-- menu categories -->
     <menuitem name="Categories" id="hotel_categorie_cat" parent="hotel.menu_root"/>
-        <!--
-    <menuitem name="Menu 2" id="hotel.menu_2" parent="hotel.menu_root"/>
-    -->
-        <!-- actions -->
+
+      <!-- actions -->
     <menuitem name="List of categories" id="hotel_categorie_list" parent="hotel_categorie_cat" action="categorie_action_window"/>
-        <!--
-    <menuitem name="Server to list" id="hotel" parent="hotel.menu_2" action="hotel.action_server"/>
-    -->
-    </data>
+  </data>
 </odoo>

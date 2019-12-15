@@ -2,17 +2,12 @@
 
 from odoo import models, fields, api
 
-class hotel(models.Model):
+class Sejour(models.Model):
     _name = 'hotel.sejour'
+    _rec_name = 'sejour'
 
-    numero_chambre = fields.Integer()
-    numero_client = fields.Integer()
     date_debut_sejour = fields.Date()
     date_fin_sejour = fields.Date()
 
-#   value2 = fields.Float(compute="_value_pc", store=True)
-#   description = fields.Text()
-
-#   @api.depends('value')
-#   def _value_pc(self):
-#       self.value2 = float(self.value) / 100
+    chambre_id = fields.Many2one(comodel_name='hotel.chambre')
+    client_id = fields.Many2one(comdoel_name='hotel.client')

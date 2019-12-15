@@ -1,78 +1,59 @@
 <odoo>
-    <data>
-        <!-- explicit list view definition -->
-        <record model="ir.ui.view" id="client_list_view">
-            <field name="name">clients</field>
-            <field name="model">hotel.client</field>
-            <field name="arch" type="xml">
-                <tree>
-                    <field name="numero_client"/>
-                    <field name="nom_client"/>
-                    <field name="prenom_client"/>
-                    <field name="tel_client"/>
-                    <field name="email_client"/>
-                    <field name="adresse_client"/>
-                    <field name="date_naissance_client"/>
-                    <field name="numero_metier"/>
-                </tree>
-            </field>
-        </record>
-
-        <record model="ir.ui.view" id="client_form_view">
-            <field name="name">client form</field>
-            <field name="model">hotel.client</field>
-            <field name="arch" type="xml">
-                <form>
-                    <group>
-                        <field name="numero_client"/>
-                        <field name="nom_client"/>
-                        <field name="prenom_client"/>
-                        <field name="tel_client"/>
-                        <field name="email_client"/>
-                        <field name="adresse_client"/>
-                        <field name="date_naissance_client"/>
-                        <field name="numero_metier"/>
-                    </group>
-                </form>
-            </field>
-        </record>
-
-        <!-- actions opening views on models -->
-        <record model="ir.actions.act_window" id="client_action_window">
-            <field name="name">client window</field>
-            <field name="res_model">hotel.client</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-
-        <!-- server action to the one above -->
-        <!--
-    <record model="ir.actions.server" id="hotel.action_server">
-      <field name="name">hotel server</field>
-      <field name="model_id" ref="model_hotel_hotel"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": self._name,
-        }
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="client_list_view">
+      <field name="name">clients</field>
+      <field name="model">hotel.client</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="nom_client"/>
+          <field name="prenom_client"/>
+          <field name="tel_client"/>
+          <field name="email_client"/>
+          <field name="adresse_client"/>
+          <field name="date_naissance_client"/>
+          <field name="metier_id"/>
+        </tree>
       </field>
     </record>
-    -->
 
-        <!-- Top menu item -->
-        <menuitem name="hotel" id="hotel.menu_root"/>
+    <record model="ir.ui.view" id="client_form_view">
+      <field name="name">client form</field>
+      <field name="model">hotel.client</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="nom_client"/>
+            <field name="prenom_client"/>
+            <field name="tel_client"/>
+            <field name="email_client"/>
+            <field name="adresse_client"/>
+            <field name="date_naissance_client"/>
+            <field name="metier_id"/>
+          </group>
+          <notebook>
+            <page string="Liste de sejours">
+              <field name="sejour_ids"/>
+            </page>
+          </notebook>
+        </form>
+      </field>
+    </record>
 
-        <!-- menu clients -->
-        <menuitem name="clients" id="hotel_client_cat" parent="hotel.menu_root"/>
-        <!--
-    <menuitem name="Menu 2" id="hotel.menu_2" parent="hotel.menu_root"/>
-    -->
-        <!-- actions -->
-        <menuitem name="List of clients" id="hotel_client_list" parent="hotel_client_cat"
-                  action="client_action_window"/>
-        <!--
-    <menuitem name="Server to list" id="hotel" parent="hotel.menu_2" action="hotel.action_server"/>
-    -->
-    </data>
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="client_action_window">
+      <field name="name">client window</field>
+      <field name="res_model">hotel.client</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="hotel" id="hotel.menu_root"/>
+
+      <!-- menu clients -->
+    <menuitem name="clients" id="hotel_client_cat" parent="hotel.menu_root"/>
+      <!-- actions -->
+    <menuitem name="List of clients" id="hotel_client_list" parent="hotel_client_cat"
+      action="client_action_window"/>
+  </data>
 </odoo>

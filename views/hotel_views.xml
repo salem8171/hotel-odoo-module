@@ -6,10 +6,10 @@
       <field name="model">hotel.hotel</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="numero_hotel"/>
           <field name="intitule_hotel"/>
           <field name="nombre_etoile"/>
-          <field name="numero_ville"/>
+          <field name="ville_id"/>
+          <field name="localisation_id"/>
         </tree>
       </field>
     </record>
@@ -20,11 +20,16 @@
       <field name="arch" type="xml">
         <form>
           <group>
-            <field name="numero_hotel"/>
             <field name="intitule_hotel"/>
             <field name="nombre_etoile"/>
-            <field name="numero_ville"/>
+            <field name="ville_id"/>
+            <field name="localisation_id"/>
           </group>
+          <notebook>
+            <page string="Liste des chambres">
+              <field name="chambre_ids"/>
+            </page>
+          </notebook>
         </form>
       </field>
     </record>
