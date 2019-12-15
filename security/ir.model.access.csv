@@ -4,3 +4,4 @@ access_hotel_etagechambre,hotel_etagechambre,model_hotel_etagechambre,base.group
 access_hotel_chambre,hotel_chambre,model_hotel_chambre,base.group_user,1,1,1,1
 access_hotel_vue_chambre,hotel_vue_chambre,model_hotel_vue_chambre,base.group_user,1,1,1,1
 access_hotel_ville,hotel_ville,model_hotel_ville,base.group_user,1,1,1,1
+access_hotel_localisation_hotel,hotel_localisation_hotel,model_hotel_localisation_hotel,base.group_user,1,1,1,1
