@@ -10,13 +10,13 @@
 Pour utiliser ce module odoo, is suffit d'avoir git et docker installés, et d'executer les commandes suivantes:
 
 <code>
-git clone https://github.com/salem8171/hotel-odoo-module \
+git clone https://github.com/salem8171/hotel-odoo-module
 </code>
-  
+</br>
 <code>
 cd hotel-odoo-module
 </code>
-  
+</br>
 <code>
 docker-compose up
 </code>
