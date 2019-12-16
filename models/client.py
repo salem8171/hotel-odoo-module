@@ -4,7 +4,7 @@ from odoo import models, fields, api
 
 class Client(models.Model):
     _name = 'hotel.client'
-    _rec_name = 'client'
+    _rec_name = 'nom_client'
 
     nom_client = fields.Char()
     prenom_client = fields.Char()
