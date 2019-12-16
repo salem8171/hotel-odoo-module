@@ -21,6 +21,8 @@ cd hotel-odoo-module
 docker-compose up
 </code>
 </br>
+</br>
+
 Si tous va bien, odoo devra etre disponible et accessible sure le port 8069.
 
 Dans le navigateur acceder à:
@@ -28,6 +30,7 @@ Dans le navigateur acceder à:
 <code>
 localhost:8069
 </code>
+</br>
 </br>
   
 La page d'acceuil de odoo doit apparaitre:
