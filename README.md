@@ -11,19 +11,25 @@ Pour utiliser ce module odoo, is suffit d'avoir git et docker installés, et d'e
 
 <code>
 git clone https://github.com/salem8171/hotel-odoo-module \
-cd hotel-odoo-module  \
-docker-compose up  \
 </code>
-
+  
+<code>
+cd hotel-odoo-module
+</code>
+  
+<code>
+docker-compose up
+</code>
+</br>
 Si tous va bien, odoo devra etre disponible et accessible sure le port 8069.
 
 Dans le navigateur acceder à:
 
 <code>
-localhost:8069  \
+localhost:8069
 </code>
-
-
+</br>
+  
 La page d'acceuil de odoo doit apparaitre:
 
 ![image](https://imgur.com/Cwjkyjj.png)
