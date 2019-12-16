@@ -11,8 +11,10 @@ Pour utiliser ce module odoo, is suffit d'avoir git et docker installés, et d'e
 
 <code>
 git clone https://github.com/salem8171/hotel-odoo-module
+  
 <br>
 cd hotel-odoo-module
+
 <br>
 docker-compose up
 </code>
@@ -24,6 +26,7 @@ Dans le navigateur acceder à:
 <code>
 localhost:8069
 </code>
+
 
 La page d'acceuil de odoo doit apparaitre:
 
