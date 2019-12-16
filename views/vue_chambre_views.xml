@@ -2,25 +2,31 @@
   <data>
     <!-- explicit list view definition -->
     <record model="ir.ui.view" id="vue_chambre_list_view">
-      <field name="name">vue_chambres</field>
+      <field name="name">Vues</field>
       <field name="model">hotel.vue_chambre</field>
       <field name="arch" type="xml">
         <tree>
           <field name="intitule_vue_chambre"/>
+          <field name="num_chambres"/>
         </tree>
       </field>
     </record>
 
     <record model="ir.ui.view" id="vue_chambre_form_view">
-      <field name="name">vue_chambre form</field>
+      <field name="name">Vue form</field>
       <field name="model">hotel.vue_chambre</field>
       <field name="arch" type="xml">
         <form>
           <group>
+          <group>
             <field name="intitule_vue_chambre"></field>
           </group>
+          <group>
+            <field name="num_chambres"/>
+          </group>
+          </group>
           <notebook>
-            <page string="Liste de chambres">
+            <page string="Liste des chambres">
               <field name="chambre_ids"/>
             </page>
           </notebook>
@@ -30,7 +36,7 @@
 
     <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="vue_chambre_action_window">
-      <field name="name">vue_chambre window</field>
+      <field name="name">Liste des vues</field>
       <field name="res_model">hotel.vue_chambre</field>
       <field name="view_mode">tree,form</field>
     </record>
@@ -38,9 +44,10 @@
     <!-- Top menu item -->
     <menuitem name="hotel" id="hotel.menu_root"/>
 
-      <!-- menu vue_chambres -->
-    <menuitem name="vue_chambres" id="hotel_vue_chambre_cat" parent="hotel.menu_root"/>
-      <!-- actions -->
-    <menuitem name="List of vue_chambres" id="hotel_vue_chambre_list" parent="hotel_vue_chambre_cat" action="vue_chambre_action_window"/>
+    <!-- menu vue_chambres -->
+    <menuitem name="Chambres" id="hotel_chambre_cat" parent="hotel.menu_root"/>
+
+    <!-- actions -->
+    <menuitem name="Liste des vues" id="hotel_vue_chambre_list" parent="hotel_chambre_cat" action="vue_chambre_action_window"/>
   </data>
 </odoo>

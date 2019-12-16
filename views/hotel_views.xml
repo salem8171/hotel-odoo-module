@@ -9,7 +9,7 @@
           <field name="intitule_hotel"/>
           <field name="nombre_etoile"/>
           <field name="ville_id"/>
-          <field name="localisation_id"/>
+          <field name="num_chambres"/>
         </tree>
       </field>
     </record>
@@ -20,10 +20,14 @@
       <field name="arch" type="xml">
         <form>
           <group>
-            <field name="intitule_hotel"/>
-            <field name="nombre_etoile"/>
-            <field name="ville_id"/>
-            <field name="localisation_id"/>
+            <group>
+              <field name="intitule_hotel"/>
+              <field name="nombre_etoile"/>
+              <field name="ville_id"/>
+            </group>
+            <group>
+              <field name="num_chambres"/>
+            </group>
           </group>
           <notebook>
             <page string="Liste des chambres">
@@ -37,7 +41,7 @@
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="hotel_action_window">
-      <field name="name">Hotel window</field>
+      <field name="name">Liste des hotels</field>
       <field name="res_model">hotel.hotel</field>
       <field name="view_mode">tree,form</field>
     </record>
@@ -46,12 +50,12 @@
 
     <menuitem name="hotel" id="hotel.menu_root"/>
 
-    <!-- menu categories -->
+      <!-- menu categories -->
 
     <menuitem name="Hotels" id="hotel_hotel_cat" parent="hotel.menu_root"/>
 
-    <!-- actions -->
+      <!-- actions -->
 
-    <menuitem name="List of hotels" id="hotel_hotel_list" parent="hotel_hotel_cat" action="hotel_action_window"/>
+    <menuitem name="Liste des hotels" id="hotel_hotel_list" parent="hotel_hotel_cat" action="hotel_action_window"/>
   </data>
 </odoo>

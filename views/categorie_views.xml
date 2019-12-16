@@ -7,6 +7,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="intitule_categorie"/>
+          <field name="num_chambres"></field>
         </tree>
       </field>
     </record>
@@ -17,7 +18,12 @@
       <field name="arch" type="xml">
         <form>
           <group>
-            <field name="intitule_categorie"></field>
+            <group>
+              <field name="intitule_categorie"></field>
+            </group>
+            <group>
+              <field name="num_chambres"></field>
+            </group>
           </group>
           <notebook>
             <page string="Liste de chambres">
@@ -30,7 +36,7 @@
 
     <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="categorie_action_window">
-      <field name="name">Categorie window</field>
+      <field name="name">Liste de categories</field>
       <field name="res_model">hotel.categorie</field>
       <field name="view_mode">tree,form</field>
     </record>
@@ -39,9 +45,9 @@
     <menuitem name="hotel" id="hotel.menu_root"/>
 
       <!-- menu categories -->
-    <menuitem name="Categories" id="hotel_categorie_cat" parent="hotel.menu_root"/>
+    <menuitem name="Chambres" id="hotel_chambre_cat" parent="hotel.menu_root"/>
 
       <!-- actions -->
-    <menuitem name="List of categories" id="hotel_categorie_list" parent="hotel_categorie_cat" action="categorie_action_window"/>
+    <menuitem name="Liste de categories" id="hotel_categorie_list" parent="hotel_chambre_cat" action="categorie_action_window"/>
   </data>
 </odoo>

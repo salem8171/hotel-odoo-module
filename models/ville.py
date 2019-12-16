@@ -4,6 +4,7 @@ from odoo import models, fields, api
 
 class Ville(models.Model):
     _name = 'hotel.ville'
+    _rec_name = 'intitule_ville'
 
     intitule_ville = fields.Char()
     hotel_ids = fields.One2many(comodel_name='hotel.hotel', inverse_name='ville_id')

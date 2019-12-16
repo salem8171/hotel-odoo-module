@@ -3,15 +3,13 @@
     'name': "hotel",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Un module erp pour la gestion des hotels.""",
 
     'description': """
-        Long description of module's purpose
-    """,
+        Un module erp pour la gestion des hotels.""",
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Yosr Ben Hamida",
+    'website': "http://www.yosrbh.msk.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/12.0/odoo/addons/base/data/ir_module_category_data.xml
@@ -26,12 +24,11 @@
     'data': [
         'security/ir.model.access.csv',
         'views/categorie_views.xml',
-        'views/EtageChambre_views.xml',
+        'views/etage_chambre_views.xml',
         'views/hotel_views.xml',
         'views/chambre_views.xml',
         'views/vue_chambre_views.xml',
         'views/ville_views.xml',
-        'views/localisation_hotel_views.xml',
         'views/metier_client_views.xml',
         'views/sejour_views.xml',
         'views/client_views.xml',

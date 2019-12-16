@@ -31,7 +31,7 @@
 
     <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="sejour_action_window">
-      <field name="name">Sejour window</field>
+      <field name="name">Liste de sejours</field>
       <field name="res_model">hotel.sejour</field>
       <field name="view_mode">tree,form</field>
     </record>
@@ -43,6 +43,6 @@
     <menuitem name="Sejours" id="hotel_sejour_cat" parent="hotel.menu_root"/>
 
     <!-- actions -->
-    <menuitem name="List of sejours" id="hotel_sejour_list" parent="hotel_sejour_cat" action="sejour_action_window"/>
+    <menuitem name="Liste de sejours" id="hotel_sejour_list" parent="hotel_sejour_cat" action="sejour_action_window"/>
   </data>
 </odoo>

@@ -7,6 +7,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="intitule_metier"/>
+          <field name="num_clients"/>
         </tree>
       </field>
     </record>
@@ -17,7 +18,12 @@
       <field name="arch" type="xml">
         <form>
           <group>
-            <field name="intitule_metier"></field>
+            <group>
+              <field name="intitule_metier"></field>
+            </group>
+            <group>
+              <field name="num_clients"/>
+            </group>
           </group>
           <notebook>
             <page string="Liste des clients">
@@ -30,39 +36,18 @@
 
     <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="metier_action_window">
-      <field name="name">metier window</field>
+      <field name="name">Liste de metiers</field>
       <field name="res_model">hotel.metier</field>
       <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- server action to the one above -->
-    <!--
-      <record model="ir.actions.server" id="hotel.action_server">
-      <field name="name">hotel server</field>
-      <field name="model_id" ref="model_hotel_hotel"/>
-      <field name="state">code</field>
-      <field name="code">
-      action = {
-      "type": "ir.actions.act_window",
-      "view_mode": "tree,form",
-      "res_model": self._name,
-      }
-      </field>
-      </record>
-    -->
+    <!-- Top menu item -->
+    <menuitem name="hotel" id="hotel.menu_root"/>
 
-      <!-- Top menu item -->
-      <menuitem name="hotel" id="hotel.menu_root"/>
+    <!-- menu metiers -->
+    <menuitem name="Clients" id="hotel_client_cat" parent="hotel.menu_root"/>
 
-        <!-- menu metiers -->
-      <menuitem name="metiers" id="hotel_metier_cat" parent="hotel.menu_root"/>
-        <!--
-          <menuitem name="Menu 2" id="hotel.menu_2" parent="hotel.menu_root"/>
-        -->
-            <!-- actions -->
-          <menuitem name="List of metiers" id="hotel_metier_list" parent="hotel_metier_cat" action="metier_action_window"/>
-            <!--
-              <menuitem name="Server to list" id="hotel" parent="hotel.menu_2" action="hotel.action_server"/>
-            -->
-            </data>
-          </odoo>
+    <!-- actions -->
+    <menuitem name="Liste de metiers" id="hotel_metier_list" parent="hotel_client_cat" action="metier_action_window"/>
+  </data>
+</odoo>

@@ -3,24 +3,30 @@
     <!-- explicit list view definition -->
 
     <record model="ir.ui.view" id="etagechambre_list">
-      <field name="name">Etage Chambre list</field>
+      <field name="name">Etages</field>
       <field name="model">hotel.etagechambre</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="name"/>
+          <field name="intitule_etage"/>
+          <field name="num_chambres"></field>
         </tree>
       </field>
     </record>
     <record model="ir.ui.view" id="etagechambre_form">
-      <field name="name">Etage Chambre Form</field>
+      <field name="name">Etage form</field>
       <field name="model">hotel.etagechambre</field>
       <field name="arch" type="xml">
         <form>
           <group>
-            <field name="name"/>
+            <group>
+              <field name="intitule_etage"/>
+            </group>
+            <group>
+              <field name="num_chambres"></field>
+            </group>
           </group>
           <notebook>
-            <page string="Liste de chambres">
+            <page string="Liste des chambres">
               <field name="chambre_ids"/>
             </page>
           </notebook>
@@ -32,28 +38,24 @@
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="etagechambre_action_window">
-      <field name="name">Etage Chambre window</field>
+      <field name="name">Liste des etages</field>
       <field name="res_model">hotel.etagechambre</field>
       <field name="view_mode">tree,form</field>
     </record>
-
-
-    <!-- server action to the one above -->
-
 
     <!-- Top menu item -->
 
     <menuitem name="hotel" id="hotel.menu_root"/>
 
-      <!-- menu categories -->
+    <!-- menu categories -->
 
-    <menuitem name="EtageChambre" id="hotel_etagechambre_cat"
+    <menuitem name="Chambres" id="hotel_chambre_cat"
       parent="hotel.menu_root"/>
 
-      <!-- actions -->
+    <!-- actions -->
 
     <menuitem name="Liste des etages" id="hotel_etagechambre_list"
-      parent="hotel_etagechambre_cat"
+      parent="hotel_chambre_cat"
       action="etagechambre_action_window"/>
 
   </data>

@@ -2,7 +2,7 @@
   <data>
     <!-- explicit list view definition -->
     <record model="ir.ui.view" id="client_list_view">
-      <field name="name">clients</field>
+      <field name="name">Clients</field>
       <field name="model">hotel.client</field>
       <field name="arch" type="xml">
         <tree>
@@ -13,23 +13,29 @@
           <field name="adresse_client"/>
           <field name="date_naissance_client"/>
           <field name="metier_id"/>
+          <field name="num_sejours"/>
         </tree>
       </field>
     </record>
 
     <record model="ir.ui.view" id="client_form_view">
-      <field name="name">client form</field>
+      <field name="name">Client form</field>
       <field name="model">hotel.client</field>
       <field name="arch" type="xml">
         <form>
           <group>
-            <field name="nom_client"/>
-            <field name="prenom_client"/>
-            <field name="tel_client"/>
-            <field name="email_client"/>
-            <field name="adresse_client"/>
-            <field name="date_naissance_client"/>
-            <field name="metier_id"/>
+            <group>
+              <field name="nom_client"/>
+              <field name="prenom_client"/>
+              <field name="tel_client"/>
+              <field name="email_client"/>
+              <field name="adresse_client"/>
+              <field name="date_naissance_client"/>
+              <field name="metier_id"/>
+            </group>
+            <group>
+              <field name="num_sejours"/>
+            </group>
           </group>
           <notebook>
             <page string="Liste de sejours">
@@ -42,7 +48,7 @@
 
     <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="client_action_window">
-      <field name="name">client window</field>
+      <field name="name">Liste des clients</field>
       <field name="res_model">hotel.client</field>
       <field name="view_mode">tree,form</field>
     </record>
@@ -51,9 +57,10 @@
     <menuitem name="hotel" id="hotel.menu_root"/>
 
       <!-- menu clients -->
-    <menuitem name="clients" id="hotel_client_cat" parent="hotel.menu_root"/>
+    <menuitem name="Clients" id="hotel_client_cat" parent="hotel.menu_root"/>
+
       <!-- actions -->
-    <menuitem name="List of clients" id="hotel_client_list" parent="hotel_client_cat"
+    <menuitem name="Liste des clients" id="hotel_client_list" parent="hotel_client_cat"
       action="client_action_window"/>
   </data>
 </odoo>

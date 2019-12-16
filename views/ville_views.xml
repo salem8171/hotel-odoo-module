@@ -7,6 +7,7 @@
       <field name="arch" type="xml">
         <tree>
           <field name="intitule_ville"/>
+          <field name="num_hotels"/>
         </tree>
       </field>
     </record>
@@ -17,7 +18,12 @@
       <field name="arch" type="xml">
         <form>
           <group>
-            <field name="intitule_ville"></field>
+            <group>
+              <field name="intitule_ville"></field>
+            </group>
+            <group>
+              <field name="num_hotels"/>
+            </group>
           </group>
           <notebook>
             <page string="Liste d'hotels">
@@ -30,7 +36,7 @@
 
     <!-- actions opening views on models -->
     <record model="ir.actions.act_window" id="ville_action_window">
-      <field name="name">ville window</field>
+      <field name="name">Liste des villes</field>
       <field name="res_model">hotel.ville</field>
       <field name="view_mode">tree,form</field>
     </record>
@@ -39,8 +45,9 @@
     <menuitem name="hotel" id="hotel.menu_root"/>
 
       <!-- menu villes -->
-    <menuitem name="villes" id="hotel_ville_cat" parent="hotel.menu_root"/>
+    <menuitem name="Hotels" id="hotel_hotel_cat" parent="hotel.menu_root"/>
+
       <!-- actions -->
-    <menuitem name="List of villes" id="hotel_ville_list" parent="hotel_ville_cat" action="ville_action_window"/>
+    <menuitem name="Liste des villes" id="hotel_ville_list" parent="hotel_hotel_cat" action="ville_action_window"/>
   </data>
 </odoo>

@@ -4,6 +4,7 @@ from odoo import models, fields, api
 
 class CategorieChambre(models.Model):
     _name = 'hotel.categorie'
+    _rec_name = 'intitule_categorie'
 
     intitule_categorie = fields.Char()
     chambre_ids = fields.One2many(comodel_name='hotel.chambre', inverse_name='categorie_id')

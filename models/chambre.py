@@ -4,6 +4,7 @@ from odoo import models, fields, api
 
 class Chambre(models.Model):
     _name = 'hotel.chambre'
+    _rec_name = 'intitule_chambre'
 
     intitule_chambre = fields.Char()
     surface_chambre = fields.Integer()
